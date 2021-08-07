@@ -1,0 +1,518 @@
+/*variables*/
+:root{
+    --primary-color:#5924ed;
+    --secondary-black:#0d081a;
+    --secondary-gray:#48464b;
+    --body-bg:#efebfa;
+}
+/*Global styles*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 10px;
+
+}
+body{
+    background-color: var(--body-bg);
+}
+img {
+    width:100% ;
+    height: 100%;    
+}
+a {
+    color:black;
+    text-decoration: none;
+}
+.container{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+.primary-btn{/*we are using the same botton in may places so we put this in global*/
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.6em 1.6em;/*this padding depends upon the font size coz we use em*/
+    border-radius: 2rem;
+}
+.buttons{
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-items: flex-start;
+    gap: 2rem;    
+}
+.buttons svg{
+    width: 50px;
+    color: var(--primary-color);
+}
+
+
+/* hero section*/
+#hero{
+    height: 100vh;
+    width: 100%;
+    padding-top: 10rem;
+}
+#hero .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+#hero .container .left{ 
+    flex: 6;
+}
+#hero .container .right{
+    flex: 8;
+}
+.my__image{
+    height: 500px;
+    width: 300px;
+    
+}
+#hero .left .subheading{
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+#hero .left .heading{
+    font-size: 3.5rem;
+    font-family: 'Bungee Shade';
+    
+}
+#hero .left .wrapper{
+    margin-bottom: -2rem;
+}
+
+#hero .left .desc{
+    margin-top: 2.5rem;
+    font-weight: 500;
+    max-width: 400px;
+    font-size: 1.2rem;
+    color: var(--secondary-black);    
+}
+#hero .right{
+    text-align: right;
+}
+#hero .right img{
+    width: 60%;
+    height: 500px;
+    max-width: 450px;
+    object-position: 50% 30%;
+    box-shadow: var(--primary-color) 10px 10px;
+    /* border: var(--primary-color) solid; */
+}
+#about .buttons.outline{
+    background-color: transparent;
+    border-radius: 50px;
+    border: 2px solid var(--primary-color);
+    
+}
+#about .container .sectionheading{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+#about .container .card_desc {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+#about .container .card_sub_title{
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+#about .container .right{
+    font-size: 1.5rem;
+}
+
+
+/*media query*/
+
+@media (max-width: 768px){
+    /* html{
+        font-size: 9px;
+    } */
+    #hero .container{
+        flex-direction: column-reverse;       
+    }
+    #hero .container .right{
+        text-align: center;
+        /* margin-bottom: 10px; */
+        margin-bottom: -450px;
+        margin-bottom: 20px;
+    }
+    #hero .container .right .my__image{
+        height: 300px;
+        width: 200px;
+        bottom: 20px;
+    }
+    #hero .container .left{
+        text-align: center; 
+        
+    }
+    #hero .container .buttons{
+        justify-content: center;
+        font-size: 500px;
+    }
+    #hero .container .left .heading{
+        font-size: 3rem;
+        margin: 0 auto;
+    }
+    #hero .container .left .desc{
+        margin: 0 auto;
+        margin-top: 2rem;
+        font-size: 2rem;
+        font-weight: 400;
+
+    }
+    #hero .container .subheading{
+        font-size: 2rem;
+    }
+}
+/*navbar section*/
+#navigation {
+	position: fixed;
+	right: 50px;
+	height: auto;
+	top: 20px;
+	z-index: 100;
+}
+#navigation .nav-icon {
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+	margin-right: 0;
+	cursor: pointer;
+	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#navigation .nav-icon svg {
+	width: 80%;
+	color: white;
+}
+#nav-content {
+	position: fixed;
+	right: 0;
+	width: 80%;
+	max-width: 800px;
+	height: 100%;
+	z-index: 100;
+	background-color: var(--secondary-black);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	transform: translateX(100%);
+	transition: 0.3s ease transform;
+}
+#nav-content.show {
+	transform: translateX(0);
+	box-shadow: -6px 0px 29px 7px #000000a3;
+}
+#nav-content .section-heading {
+	text-align: left;
+}
+#nav-content .section-heading::before {
+	content: 'Menu';
+	text-align: left;
+	-webkit-text-stroke: 1.5px #afadad25;
+}
+#nav-content .wrapper {
+	width: 70%;
+	position: relative;
+}
+#nav-content ul {
+	list-style: none;
+	text-align: left;
+}
+#nav-content ul li {
+	margin-bottom: 2rem;
+}
+#nav-content ul li a {
+	display: inline-block;
+	width: 100%;
+	color: white;
+	font-size: 5rem;
+	font-family: 'Montserrat';
+	/* position: relative; */
+}
+#nav-content ul li a::after {
+	content: attr(data-text);
+	pointer-events: none;
+	position: absolute;
+	right: -150px;
+	bottom: 30%;
+	width: 100%;
+	color: transparent;
+	-webkit-text-stroke: 1.5px #afadad25;
+	opacity: 0;
+	transition: 0.3s ease;
+	transition-property: opacity, transform;
+	z-index: -1;
+	text-align: center;
+	transform: rotate(90deg) scale(3);
+}
+#nav-content ul li a:hover::after {
+	opacity: 1;
+	transform: scale(3) translateY(10px) rotate(90deg);
+}
+#nav-content .close-btn {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	color: white;
+	width: 40px;
+	height: 40px;
+	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: 0.3s ease background-color;
+}
+#nav-content .close-btn:hover {
+	background-color: crimson;
+}
+#nav-content .close-btn svg {
+	width: 80%;
+}
+@media only screen and (max-width: 768px) {
+	#navigation {
+		right: 10px;
+		top: 10px;
+	}
+	#nav-content nav ul li a::after {
+		display: none;
+	}
+	#nav-content .section-heading {
+		text-align: right;
+		margin-bottom: 5rem;
+	}
+	#nav-content .section-heading::before {
+		text-align: right;
+	}
+	#nav-content nav ul {
+		text-align: right;
+	}
+	#nav-content nav ul li a {
+		font-size: 2.5rem;
+	}
+	#nav-content .wrapper {
+		width: 90%;
+	}
+}
+/*about section*/
+#about{
+    padding: 15rem 0;
+}
+#about .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+#about .left{
+    padding: 2rem;
+    text-align: center;
+
+}
+#about .left .card{
+    box-shadow: 0px 0px 20px #4705fc33;
+    padding: 3rem;
+    border-radius: 12px;
+    min-height: 400px;
+}
+#about .left .card .img{
+    width: 70px;
+    height: 70px;
+    margin:0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+#about .left .card .img img{
+    object-fit:contain;
+}
+#about .left .card .desc{
+    color: var(--secondary-gray);
+    margin-bottom: 2rem;
+}
+#about .left .card .card_name{
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+}
+#about .left .card .card_sub_title{
+    font-size: 1.4rem;
+}
+#about .subheading{
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+
+}
+#about .right .slogan{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+#about .right .right_text{
+    color: var(--secondary-black);
+}
+.buttons .outline{
+    background-color: transparent;
+    border-radius: 50px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+@media only screen and (max-width:768px){
+    #about .wrapper{
+        flex-direction: column-reverse;
+    }
+    #about .right .buttons{
+        flex-direction: column;
+    }
+    #about .right .buttons a{
+        width: 100%;
+        text-align: center;
+    }
+}
+/*project section style*/
+#projects{
+    padding: 10rem 0;
+    align-items: center;
+    justify-content: center;
+}
+#projects .container .section-heading{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 4rem;
+    font-weight: bold;
+
+}
+#projects .item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    
+    margin: 0 auto;
+    margin-bottom: 15rem;
+}
+/* #projects img{
+    width: 500px;
+    height: 500px;
+} */
+#projects .item:nth-child(even){
+    flex-direction: row-reverse;
+}
+#projects .item .left{
+    flex: 1;
+}
+#projects .item .right{
+    flex: 1;
+    margin: -150px;
+    background-color:var(--body-bg);
+    padding: 5rem 2rem;
+    box-shadow: 0 0 20px #00000028;
+    z-index: 2;
+    border-radius: 15px;
+}
+#projects .item:nth-child(even) .right{
+    margin-left: 0;
+}
+#projects .item:nth-child(even) .left{
+    margin-left:-150px
+
+}
+#projects .item .left .img{
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px #4705fc33;
+    position: relative;
+}
+#projects .item .left .img::after{
+    position: absolute;
+    content: "";
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #856dc738;
+}
+#projects .item .left .img img{
+    object-fit: cover;
+    transition: 0.3s ease transform;
+}
+#projects .item:hover .left .img img{
+    transform: scale(1,1);
+    z-index: 1;
+}
+#projects .right .project_title{
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+}
+#projects .right .project_subheading{
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+#projects .right .desc{
+    color:var(--secondary-gray);
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+}
+#projects .item .right .buttons .external-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: calc(0.6em - 4px) calc(0.6em - 4px);
+}
+#projects .item .right .buttons .external-link svg{
+    width: 25px;
+}
+@media only screen and (max-width:768px){
+    #projects .item{
+        flex-direction: column;
+    }
+    #projects .item .left{
+        width: 100%;
+    }
+    #projects .item .right{
+        width: 90%;
+        margin:  0 auto;
+        margin-top: -150px;
+    }
+    #projects .item:nth-child(even){
+        flex-direction: column;
+    }
+    #projects .item:nth-child(even) .left{
+        margin-left: 0px;
+    }
+    #projects .item:nth-child(even) .right{
+        align-items: center;
+        margin-left: 15px;
+    }
+}
+@media only screen and (max-width:450px){
+    #projects .item .right .buttons{
+        flex-direction: column;
+    }
+    #projects .item .right .buttons a{
+        width: 100%;
+        text-align: center;
+    }
+}
