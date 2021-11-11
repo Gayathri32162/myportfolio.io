@@ -476,6 +476,7 @@ p {
 }
 #stats .all-items .item {
 	padding: 2rem;
+	margin-bottom: 30px;
 }
 #stats .number {
 	font-family: 'Poppins';
