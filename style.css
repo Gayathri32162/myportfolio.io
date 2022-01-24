@@ -391,7 +391,7 @@ p {
 	}
 }
 
-/* Services Section */
+
 #services {
 	padding: 5rem 0;
 }
@@ -425,6 +425,7 @@ p {
 	margin-bottom: 1rem;
 }
 #services .item-heading {
+	margin-top: 20px;
 	font-weight: 500;
 	font-size: 2rem;
 	/* text-transform: uppercase; */
